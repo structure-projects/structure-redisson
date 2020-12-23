@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>cn.structured</groupId>
+        <artifactId>structure-dependencies</artifactId>
+        <version>1.0.2.RELEASE</version>
+    </parent>
+
+    <packaging>jar</packaging>
+
+    <artifactId>structure-redission-starter</artifactId>
+    <version>1.0.1${revision}</version>
+    <name>structure-redisson-starter</name>
+    <description>封装 redisson 将封装成启动器,并且对分布式锁和缓存进行封装</description>
+
+    <url>https://projects.structured.cn/structure-redisson</url>
+    <inceptionYear>2020</inceptionYear>
+    <organization>
+        <name>structure</name>
+    </organization>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>chuckLcq</id>
+            <name>chuck</name>
+            <email>15524415221@163.com</email>
+        </developer>
+        <developer>
+            <id>lchqJava</id>
+            <name>Chuanqiang Liu</name>
+            <email>361648887@qq.com</email>
+        </developer>
+    </developers>
+
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com/structure-projects/structure-redisson/issues</url>
+    </issueManagement>
+
+    <scm>
+        <url>https://github.com/structure-projects/structure-redisson</url>
+        <connection>scm:git:git://github.com/structure-projects/structure-redisson.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:structure-projects/structure-redisson.git</developerConnection>
+    </scm>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+        </dependency>
+    </dependencies>
+</project>
