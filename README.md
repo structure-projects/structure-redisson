@@ -1,0 +1,2 @@
+# structure-redission
+一个对redission的封装,redission要比redis功能更强大
