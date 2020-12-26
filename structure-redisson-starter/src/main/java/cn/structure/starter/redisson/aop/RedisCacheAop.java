@@ -2,12 +2,14 @@ package cn.structure.starter.redisson.aop;
 
 import cn.structure.starter.redisson.anno.*;
 import cn.structure.starter.redisson.properties.CacheProperties;
+import cn.structure.starter.redisson.properties.RedissonProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.redisson.api.*;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.LocalVariableTableParameterNameDiscoverer;
 
 import javax.annotation.Resource;
@@ -32,20 +34,12 @@ public class RedisCacheAop {
     private RedissonClient redissonClient;
 
     @Resource
-    private CacheProperties cacheProperties;
+    private RedissonProperties redissonProperties;
 
     /**
-     * @Title  writeCache
-     * @Description 写入缓存
-     * @author chuck
-     * @updateAuthor chuck
-     * @Date 2020/4/7 14:26
-     * @param proceedingJoinPoint
-     * @param wCache
-     * @version v1.0.0
-     * @exception
-     * @throws
-     * @return java.lang.Object
+     * <p>
+     *     写入缓存
+     * </p>
      **/
     @Around("@annotation(wCache)")
     public Object writeCache(ProceedingJoinPoint proceedingJoinPoint, WCache wCache) throws Throwable {
@@ -103,19 +97,10 @@ public class RedisCacheAop {
         return proceed;
     }
     /**
-     * @Title  updateMapCache
-     * @Description 更新map缓存
+     * <p>
+     *     更新map缓存
+     * </p>
      * @author chuck
-     * @updateAuthor chuck
-     * @Date 2020/4/10 11:20
-     * @param mapKey
-     * @param key
-     * @param data
-     * @param time
-     * @version v1.0.0
-     * @exception
-     * @throws
-     * @return void
      **/
     private void updateMapCache(String mapKey, String key,Object data, CTime time){
         log.info("updateMapCache - > mapKey = {},key = {},data = {}",mapKey,key,data);
@@ -127,19 +112,9 @@ public class RedisCacheAop {
     }
 
     /**
-     * @Title  updateCacheList
-     * @Description 更新缓存列表
-     * @author chuck
-     * @updateAuthor chuck
-     * @Date 2020/4/7 15:23 
-     * @param listKey
-     * @param data
-     * @param size
-     * @param time
-     * @version v1.0.0
-     * @exception 
-     * @throws   
-     * @return void
+     * <p>
+     *     更新缓存列表
+     * </p>
      **/
     private void updateCacheList(String listKey, Object data, int size, CTime time) {
         log.info("updateCacheList - > listKey = {},data = {}",listKey,data);
@@ -158,17 +133,9 @@ public class RedisCacheAop {
     }
 
     /**
-     * @Title  readListCache
-     * @Description 读列表缓存
-     * @author chuck
-     * @updateAuthor chuck
-     * @Date 2020/4/7 14:27
-     * @param proceedingJoinPoint
-     * @param rListCache
-     * @version v1.0.0
-     * @exception
-     * @throws
-     * @return java.lang.Object
+     * <p>
+     *     读列表缓存
+     * </p>
      **/
     @Around("@annotation(rListCache)")
     public Object readListCache(ProceedingJoinPoint proceedingJoinPoint, RListCache rListCache) throws Throwable {
@@ -340,23 +307,19 @@ public class RedisCacheAop {
     }
 
     /**
-     * @Title  getKey
-     * @Description 获取队列的KEY
-     * @author chuck
-     * @updateAuthor chuck
-     * @Date 2020/4/7 15:47
-     * @param key
-     * @version v1.0.0
-     * @exception
-     * @throws
-     * @return java.lang.String
+     * <p>
+     *     获取队列的KEY
+     * </p>
      **/
     public String getKey(String key){
         StringBuffer stringBuffer = new StringBuffer();
-        String groupName = cacheProperties.getKeyGroupName();
-        if (groupName != null && groupName.length() > 0 ) {
-            stringBuffer.append(groupName);
-            stringBuffer.append(":");
+        CacheProperties cache = redissonProperties.getCache();
+        if (null != cache) {
+            String groupName = cache.getKeyGroupName();
+            if (groupName != null && groupName.length() > 0 ) {
+                stringBuffer.append(groupName);
+                stringBuffer.append(":");
+            }
         }
         stringBuffer.append(key);
         return stringBuffer.toString();

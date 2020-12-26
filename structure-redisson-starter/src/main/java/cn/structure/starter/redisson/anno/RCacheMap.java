@@ -15,17 +15,33 @@ import java.util.concurrent.TimeUnit;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface RCacheMap {
-    //mapKey
+    /**
+     * mapKey
+     */
     String mapKey() default "";
-    //list 关联情况下的KEY
+
+    /**
+     * 关联情况下的KEY
+     */
     CList list() default @CList;
-    //key
+
+    /**
+     * key
+     */
     String key() default "";
-    //时间配置
-    //是否有时效果
+
+    /**
+     * 时间配置 是否有时效果
+     */
     boolean isTime() default false;
-    //时间限制
+
+    /**
+     * 时间限制
+     */
     long time() default 0L;
-    //时间类型
+
+    /**
+     * 时间类型
+     */
     TimeUnit timeType() default TimeUnit.MINUTES;
 }

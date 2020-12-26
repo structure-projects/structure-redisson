@@ -8,12 +8,11 @@ import org.springframework.expression.spel.support.StandardEvaluationContext;
 import org.springframework.util.StringUtils;
 
 /**
- *
- * @Title:  StringUtil
- * @Description: StringUtil
- * @date:   2019/9/19 16:31
- * @Version V1.0.0
- *
+ * <p>
+ *     string 工具类
+ * </p>
+ * @author chuck
+ * @since 2020-12-26
  */
 public class StringUtil {
 
@@ -61,18 +60,6 @@ public class StringUtil {
 
     /**
      * <p>判断字符串是否为空</p>
-     * <ul>
-     * <li>null-->true
-     * <li>""-->true
-     * <li>"  "-->true
-     * <li>"\t"-->true
-     * <li>"\n"-->true
-     * <li>"\f"-->true
-     * <li>"\r"-->true
-     * <li>"123"-->false
-     * <li>" 123 "-->false
-     * <li>" 1 23 "-->false
-     * </ul>
      * @param string
      * @return boolean
      **/

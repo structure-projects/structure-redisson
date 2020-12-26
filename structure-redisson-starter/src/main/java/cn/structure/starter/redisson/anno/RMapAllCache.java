@@ -14,12 +14,23 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface RMapAllCache {
-    //mapKey
+    /**
+     * mapKey
+     */
     String mapKey() default "";
-    // keys
+
+    /**
+     * keys
+     */
     String keys() default "";
-    //key name 用于补偿
+
+    /**
+     * key name 用于补偿
+     */
     String keyName()default "";
-    //时间设置
+
+    /**
+     * 时间设置
+     */
     CTime time() default @CTime();
 }
