@@ -16,16 +16,33 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface RListCache {
-    //key
+    /**
+     * key
+     */
     String key() default "";
-    //设置分页的大小
+
+    /**
+     * 设置分页的大小
+     */
     String page() default "1" ;
-    //默认大小如果是集合需要设置大小
+
+    /**
+     * 默认大小如果是集合需要设置大小
+     */
     String size() default "20" ;
-    //排序
+
+    /**
+     * 排序
+     */
     SortOrder sort() default SortOrder.DESC;
-    //和map关联的KEY
+
+    /**
+     * 和map关联的KEY
+     */
     String mapKey() default "";
-    //读取集合的data类型是data 还是key
+
+    /**
+     * 读取集合的data类型是data 还是key
+     */
     CList.ListType value() default CList.ListType.DATA;
 }

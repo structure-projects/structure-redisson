@@ -9,7 +9,6 @@ import java.lang.annotation.*;
  *   <pre>
  *   可以搭配{@link CMap} redisson 的map结构和对象结构混合使用
  *   </pre>
- * </p>
  * @author chuck
  * @since 2020-12-23
  * @version 1.0.1
@@ -49,10 +48,8 @@ public @interface CList {
 
     enum  ListType {
         /**
-         * <pre>
          *     KEY 是指存储的集合对象只存储了数据中的key部分
          *     不太建议只存储KEY -- 双向没有时效限制时可以使用key 或者说时效比较长在定时更新范围内
-         * <pre/>
          */
         KEY(),
         /**

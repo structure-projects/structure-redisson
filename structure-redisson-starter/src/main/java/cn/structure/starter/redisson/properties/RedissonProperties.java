@@ -7,7 +7,9 @@ import lombok.ToString;
 import org.redisson.config.SslProvider;
 import org.redisson.config.TransportMode;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.context.properties.NestedConfigurationProperty;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * <p>
@@ -20,6 +22,7 @@ import org.springframework.boot.context.properties.NestedConfigurationProperty;
 @Getter
 @Setter
 @ToString
+@Configuration
 @ConfigurationProperties(prefix = "structure.redisson")
 public class RedissonProperties {
     /**
@@ -109,5 +112,8 @@ public class RedissonProperties {
      *  数据缓存时间 默认30分钟
      */
     private Long dataValidTime = 1000 * 60 * 30L;
+
+    @NestedConfigurationProperty
+    private CacheProperties cache;
 
 }

@@ -15,11 +15,20 @@ import java.util.concurrent.TimeUnit;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface RCache {
-    //key
+    /**
+     * key
+     * @return
+     */
     String key() default "";
-    //设置默认时长
+
+    /**
+     * 设置默认时长
+     */
     long time() default 1;
-    //设置单位
+
+    /**
+     * 设置单位
+     */
     TimeUnit timeType() default TimeUnit.DAYS;
 
 }

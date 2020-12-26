@@ -18,7 +18,6 @@ import org.springframework.context.annotation.Configuration;
 @Setter
 @ToString
 @Configuration
-@ConfigurationProperties("structure.redisson.cache")
 public class CacheProperties {
 
     /**

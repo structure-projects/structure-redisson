@@ -15,10 +15,18 @@ import java.util.concurrent.TimeUnit;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface CTime{
-    //是否有时效果
+    /**
+     * 是否有时效果
+     */
     boolean isTime() default false;
-    //时间限制
+
+    /**
+     * 时间限制
+     */
     long time() default 0L;
-    //时间类型
+
+    /**
+     * 时间类型
+     */
     TimeUnit timeType() default TimeUnit.MINUTES;
 }

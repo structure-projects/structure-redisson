@@ -25,7 +25,7 @@ public interface IDistributedLocker {
      * 通过key获取锁 {@link RLock}并设置一个超时时间
      * @param lockKey 锁的key
      * @param timeout 超时时间
-     * @return
+     * @return org.redisson.api.RLock
      */
     RLock lock(String lockKey, int timeout);
 
@@ -34,7 +34,7 @@ public interface IDistributedLocker {
      * @param lockKey 锁的key
      * @param unit 时间的单位
      * @param timeout 超时时间
-     * @return
+     * @return org.redisson.api.RLock
      */
     RLock lock(String lockKey, TimeUnit unit, int timeout);
 
@@ -44,7 +44,7 @@ public interface IDistributedLocker {
      * @param unit
      * @param waitTime
      * @param leaseTime
-     * @return
+     * @return org.redisson.api.RLock
      */
     boolean tryLock(String lockKey, TimeUnit unit, int waitTime, int leaseTime);
 

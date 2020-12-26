@@ -1,0 +1,46 @@
+#单体模式
+structure:
+  redisson:
+    #指定连接方式
+    model: single
+    #如果有密码配置密码
+    #password: 123456
+    single:
+      #默认情况下只需要配置地址
+      address: redis://127.0.0.1:6379
+    cache:
+      key-group-name: test
+
+#---
+##哨兵模式
+#structure:
+#  redisson:
+#    model: sentinel
+#    password: 123456
+#    sentinel:
+#      sentinel-addresses: redis://192.168.2.138:26371,redis://192.168.2.138:26372,redis://192.168.2.138:26373
+#      master-name: mymaster
+#---
+##主从模式
+#structure:
+#  redisson:
+#    model: master-slave
+#    password: 123456
+#    master-slave:
+#      master-address: redis://192.168.2.138:26371
+#      slave-addresses: redis://192.168.2.138:26371,redis://192.168.2.138:26372,redis://192.168.2.138:26373
+#---
+##集群模式
+#structure:
+#  redisson:
+#    model: cluster
+#    cluster:
+#      node-addresses: redis://192.168.2.138:26371,redis://192.168.2.138:26372,redis://192.168.2.138:26373
+#---
+##托管模式
+#structure:
+#  redisson:
+#    model: replicated
+#    replicated:
+#      node-addresses: redis://192.168.2.138:26371,redis://192.168.2.138:26372,redis://192.168.2.138:26373
+#
