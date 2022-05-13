@@ -8,13 +8,12 @@
     <parent>
         <groupId>cn.structured</groupId>
         <artifactId>structure-dependencies</artifactId>
-        <version>1.0.2.RELEASE</version>
+        <version>1.1.0.SNAPSHOT</version>
     </parent>
 
     <packaging>jar</packaging>
 
     <artifactId>structure-redisson-starter</artifactId>
-    <version>1.0.1${revision}</version>
     <name>structure-redisson-starter</name>
     <description>封装 redisson 将封装成启动器,并且对分布式锁和缓存进行封装</description>
 
