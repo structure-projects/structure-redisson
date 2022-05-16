@@ -5,7 +5,7 @@
 ```xml
         <dependency>
             <groupId>cn.structured</groupId>
-            <artifactId>structure-redission-starter</artifactId>
+            <artifactId>structure-redisson-starter</artifactId>
             <version>${last.version}</version>
         </dependency>
 ```

@@ -13,7 +13,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.structured</groupId>
-    <artifactId>structure-redission-example</artifactId>
+    <artifactId>structure-redisson-example</artifactId>
 
     <description>redission 启动器测试例子</description>
 
@@ -29,7 +29,7 @@
         </dependency>
         <dependency>
             <groupId>cn.structured</groupId>
-            <artifactId>structure-redission-starter</artifactId>
+            <artifactId>structure-redisson-starter</artifactId>
             <version>1.0.1.SNAPSHOT</version>
         </dependency>
     </dependencies>
